@@ -1,0 +1,58 @@
+input{
+    border: 1px solid; 
+}
+text{
+    background-color: red;
+    border: 2px solid;    
+}
+button{
+    background-color:red;
+    border: 1px solid;
+    width: 50px;
+    line-break: inherit;
+    
+}
+.errorsBg {
+	background-color: snow;
+	color: red;
+	border: 1px solid;
+}
+.errorMessage {
+	padding: 4px 6px;
+        font-size: x-small;
+}
+body{
+    font-family: arial;
+}
+table {
+        
+        border: 1px solid;
+        border-color: blue;  
+       
+}
+.tdLabel{
+    font-size: small;
+    text-underline-position: below;
+}
+.atr{
+    background-color: yellowgreen;
+}
+.atr2{
+    background-color: #ccccff;
+}
+
+a{
+    font-family: serif;
+    font-style: italic;
+    color: black;
+}
+.action{
+    font-family: serif;
+    font-style: italic;
+    color: black;
+}
+href{
+    font-family: serif;
+    font-style: italic;
+    color: black;
+}

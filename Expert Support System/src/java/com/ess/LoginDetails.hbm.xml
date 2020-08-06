@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 30, 2014 10:31:50 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.ess.LoginDetails" table="login_details" catalog="expert_support_system">
+        <id name="loginId" type="java.lang.Integer">
+            <column name="Login_Id" />
+            <generator class="identity" />
+        </id>
+        <property name="passwd" type="string">
+            <column name="Passwd" length="30" not-null="true" />
+        </property>
+        <property name="userName" type="string">
+            <column name="User_Name" length="30" not-null="true" />
+        </property>
+        <property name="grp" type="string">
+            <column name="Grp" length="20" not-null="true" />
+        </property>
+        <set name="ticketDetailses" table="ticket_details" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Login_Id" not-null="true" />
+            </key>
+            <one-to-many class="com.ess.TicketDetails" />
+        </set>
+        <set name="groupDetailses" table="group_details" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Login_Id" not-null="true" />
+            </key>
+            <one-to-many class="com.ess.GroupDetails" />
+        </set>
+        <set name="clientDetailses" table="client_details" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Login_Id" not-null="true" />
+            </key>
+            <one-to-many class="com.ess.ClientDetails" />
+        </set>
+        <set name="answerDetailses" table="answer_details" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Login_Id" not-null="true" />
+            </key>
+            <one-to-many class="com.ess.AnswerDetails" />
+        </set>
+    </class>
+</hibernate-mapping>

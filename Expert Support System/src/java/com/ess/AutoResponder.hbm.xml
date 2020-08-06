@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 30, 2014 10:31:50 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.ess.AutoResponder" table="auto_responder" catalog="expert_support_system">
+        <id name="autoResponderId" type="java.lang.Integer">
+            <column name="auto_responder_Id" />
+            <generator class="identity" />
+        </id>
+        <property name="category" type="string">
+            <column name="Category" length="45" not-null="true" />
+        </property>
+        <property name="issue" type="string">
+            <column name="Issue" length="30" not-null="true" />
+        </property>
+        <property name="solution" type="string">
+            <column name="Solution" length="200" not-null="true" />
+        </property>
+        <property name="author" type="string">
+            <column name="Author" length="30" not-null="true" />
+        </property>
+        <property name="dateOfArticle" type="date">
+            <column name="Date_of_Article" length="10" not-null="true" />
+        </property>
+        <property name="advMsg" type="string">
+            <column name="Adv_MSG" length="100" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

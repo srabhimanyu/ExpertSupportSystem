@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="expert_support_system"/>
+  <table-filter match-name="ticket_details"/>
+  <table-filter match-name="assests_details"/>
+  <table-filter match-name="solve_ticket"/>
+  <table-filter match-name="announcement"/>
+  <table-filter match-name="cancel_ticket"/>
+  <table-filter match-name="login_details"/>
+  <table-filter match-name="auto_responder"/>
+  <table-filter match-name="client_details"/>
+  <table-filter match-name="group_details"/>
+  <table-filter match-name="fee_details"/>
+  <table-filter match-name="representative_details"/>
+  <table-filter match-name="answer_details"/>
+  <table-filter match-name="session_details"/>
+  <table-filter match-name="admin_details"/>
+</hibernate-reverse-engineering>

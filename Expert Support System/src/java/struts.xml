@@ -1,0 +1,209 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default"> 
+        
+        <result-types>
+            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"></result-type>
+        </result-types>
+
+        <action name="welcome" class="com.application.welcomeAction" >
+            <result name="success"  type="tiles" >/welcome</result>
+            <result name="error" >index.jsp</result>
+            <result name="input" >index.jsp</result>
+        </action>
+        
+        
+        
+        <action name="SignUp" >
+            <result name="success" type="tiles">/SignUp</result>
+        </action>
+        
+        
+        
+        <action name="loginSignUp"  class="com.application.loginSignUpAction">
+            <result name="SignUpRepresentative" type="tiles">/SignUpRepresentative</result>
+            <result name="SignUpClient" type="tiles">/SignUpClient</result>
+        </action>
+
+        <action name="loginmenu" >
+            <result name="success" type="tiles">/loginmenu</result>
+        </action>        
+
+        <action name="logout" class="com.application.logoutAction">
+            <result name="success" type="tiles">/logout</result>
+        </action>        
+        
+                                        
+        <action name="repSignUp" >
+            <result name="success" type="tiles">/repSignUp</result>
+        </action>
+
+        <action name="clientSignUp" >
+            <result name="success" type="tiles">/clientSignUp</result>
+        </action>
+        
+        
+        <action name="repSignUpAction"  class="com.application.repSignUpAction">
+            <result name="success" type="tiles">/repSignUpAction</result>
+        </action>
+        
+        <action name="clientSignUpAction"  class="com.application.clientSignUpAction">
+            <result name="success" type="tiles">/clientSignUpAction</result>
+        </action>
+
+        <action name="updateadmin" >
+            <result name="success" type="tiles">/updateAdmin</result>
+        </action>
+        
+        <action name="adminaccess"  class="com.application.AdminAccessAction">
+            <result name="success" type="tiles">/updateAdminAccess</result>
+        </action>
+        
+        <action name="updateadminSuccess"  class="com.application.AdminDetailUpdate">
+            <result name="success" type="tiles">/updateAdminAccess</result>
+        </action>
+
+        <action name="addAdmin" >
+            <result name="success" type="tiles">/adminSignUp</result>
+        </action>
+
+        <action name="adminSignUpAction"  class="com.application.adminSignUpAction">
+            <result name="success" type="tiles">/adminSignUpAction</result>
+        </action>
+
+        <action name="welcomeHome" >
+            <result name="success" type="tiles">/welcomeHome</result>
+        </action>
+
+        <action name="adminHome" >
+            <result name="success" type="tiles">/adminHome</result>
+        </action>        
+        
+        <action name="representativeHome" >
+            <result name="success" type="tiles">/representativeHome</result>
+        </action>
+                
+        <action name="clientHome" >
+            <result name="success" type="tiles">/clientHome</result>
+        </action>
+        
+        <action name="clientDetailsAccess" class="com.application.varAccessAction" >
+            <result name="success" type="tiles">/clientDetailsAccess</result>
+        </action>
+        
+        <action name="clientaccess" class="com.application.ClientAccessAction">
+            <result name="viewDetails" type="tiles">/clientDetails</result>
+            <result name="updateDetails" type="tiles">/updateDetails</result>
+            <result name="changelpass" type="tiles">/changelpass</result>
+            <result name="changecpass" type="tiles">/changecpass</result>
+            <result name="error" type="tiles">/clientDetailsAccess</result>
+        </action>
+
+        <action name="updateclientdetails" class="com.application.ClientDetailUpdateAction" >
+            <result name="success" type="tiles">/updateclientdetailsSuccess</result>
+        </action>        
+
+        <action name="changeloginpass" class="com.application.changeLoginPassAction" >
+            <result name="success" type="tiles">/changeloginpass</result>
+            <result name="GoToHomePage" type="tiles">/clientHome</result>
+            <result name="error" type="tiles">/changelpass</result>
+        </action>        
+
+        <action name="changeclientpass" class="com.application.changeClientPassAction" >
+            <result name="success" type="tiles">/changeclientpass</result>
+            <result name="GoToHomePage" type="tiles">/clientHome</result>
+            <result name="error" type="tiles">/changecpass</result>
+        </action>                
+
+        <action name="checkTnC">
+            <result name="success" type="tiles">/checkTnC</result>
+        </action>
+
+        <action name="checkTnCdone" class="com.application.TermsNConditionCheckAction" method="execute">
+            <result name="success" type="tiles">/generateTicketRequest</result>
+            <result name="error" type="tiles">/checkTnC</result>
+        </action>        
+
+
+
+        <action name="mydetails">
+            <result name="success" type="tiles">/mydetails</result>
+        </action>
+
+        <action name="FAQuesAccess">
+            <result name="success" type="tiles">/FAQuesAccess</result>
+        </action>
+                                                
+                      
+        <action name="client-sendGenerateTicketReq" class="com.application.GenerateTicketReqAction">
+            <result name="success" type="tiles">/sendGenTicketRequest</result>
+        </action>
+
+        <action name="viewTickets" class="com.application.ExpertSupportSystemUtility"  method="getAllTickets">
+            <result name="success" type="tiles">/viewAllTickets</result>
+        </action>
+        
+        <action name="answerTickets" >
+            <result name="success" type="tiles">/answerTickets</result>
+        </action>        
+
+        <action name="findTickets" class="com.application.ExpertSupportSystemUtility">
+            <result name="success" type="tiles">/findTickets</result>
+        </action>          
+        
+        <action name="answerTicketNow" class="com.application.ticketDetailAccess">
+            <result name="success" type="tiles">/answerTicketNow</result>
+        </action>
+
+        <action name="ticketAnswered" class="com.application.ticketAnswerAction">
+            <result name="success" type="tiles">/ticketAnswered</result>
+        </action>        
+        
+        <action name="viewTicketsToCancel" class="com.application.ExpertSupportSystemUtility">
+            <result name="success" type="tiles">/viewTicketsToCancel</result>
+        </action>
+        
+        <action name="CancelDeleteTicket" class="com.application.ticketCancelReasonAction">
+            <result name="success" type="tiles">/CancelDeleteTicket</result>
+        </action>
+
+        <action name="cancelTicketComplete" class="com.application.ticketCancelAction">
+            <result name="success" type="tiles">/cancelTicketComplete</result>
+        </action>        
+
+        <action name="viewAnswerBook" class="com.application.ExpertSupportSystemUtility" method="getAllAnswerBooks">
+            <result name="success" type="tiles">/viewAnswerBook</result>
+        </action>
+        
+        <action name="viewSolvedTickets" class="com.application.ExpertSupportSystemUtility" method="getAllSolvedTickets">
+            <result name="success" type="tiles">/viewSolvedTickets</result>
+        </action>        
+
+        <action name="LoginToNotifyViaEmail" >
+            <result name="success" type="tiles">/LoginToNotifyViaEmail</result>
+        </action>
+
+        <action name="representativeaccess" class="com.application.RepresentativeAccessAction">
+            <result name="success" type="tiles">/representativeaccess</result>
+        </action>        
+                        
+        <action name="send_emailer" class="com.application.Emailer"  method="execute">
+            <result name="success" type="tiles">/SuccessEmail</result>
+            <result name="error" type="tiles">/ErrorEmail</result>
+        </action>
+                
+        
+        <action name="LoginAction" class="com.application.LoginAction" >
+            <result name="successAdmin"  type="tiles" >/LoginActionAdmin</result>
+            <result name="successRep"  type="tiles" >/LoginActionRep</result>
+            <result name="successClient"  type="tiles" >/LoginActionClient</result>
+            <result name="error"  type="tiles" >/loginmenu</result>
+            <result name="input" >index.jsp</result>
+        </action>
+        
+    </package>
+</struts>

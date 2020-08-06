@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 30, 2014 10:31:50 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.ess.SessionDetails" table="session_details" catalog="expert_support_system">
+        <id name="loginId" type="int">
+            <column name="Login_Id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="ticketDetails" class="com.ess.TicketDetails" fetch="select">
+            <column name="Ticket_Id" />
+        </many-to-one>
+        <property name="clientName" type="string">
+            <column name="Client_Name" length="30" not-null="true" />
+        </property>
+        <property name="noOfTickets" type="int">
+            <column name="No_of_Tickets" not-null="true" />
+        </property>
+        <property name="issue" type="string">
+            <column name="Issue" length="30" not-null="true" />
+        </property>
+        <property name="category" type="string">
+            <column name="Category" length="30" not-null="true" />
+        </property>
+        <property name="loginTime" type="timestamp">
+            <column name="Login_Time" length="19" />
+        </property>
+        <property name="logoffTime" type="timestamp">
+            <column name="Logoff_Time" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

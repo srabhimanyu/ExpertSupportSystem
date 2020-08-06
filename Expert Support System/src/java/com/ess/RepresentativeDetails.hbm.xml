@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 30, 2014 10:31:50 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.ess.RepresentativeDetails" table="representative_details" catalog="expert_support_system">
+        <id name="loginId" type="java.lang.Integer">
+            <column name="Login_Id" />
+            <generator class="identity" />
+        </id>
+        <property name="grp" type="string">
+            <column name="Grp" length="30" not-null="true" />
+        </property>
+        <property name="passwrd" type="string">
+            <column name="Passwrd" length="30" not-null="true" />
+        </property>
+        <property name="firstName" type="string">
+            <column name="First_Name" length="30" not-null="true" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="Last_Name" length="30" not-null="true" />
+        </property>
+        <property name="qualification" type="string">
+            <column name="Qualification" length="30" not-null="true" />
+        </property>
+        <property name="specialization" type="string">
+            <column name="Specialization" length="30" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="Address" length="50" not-null="true" />
+        </property>
+        <property name="city" type="string">
+            <column name="City" length="20" not-null="true" />
+        </property>
+        <property name="state" type="string">
+            <column name="State" length="20" not-null="true" />
+        </property>
+        <property name="country" type="string">
+            <column name="Country" length="30" not-null="true" />
+        </property>
+        <property name="secQues" type="string">
+            <column name="Sec_Ques" length="50" not-null="true" />
+        </property>
+        <property name="secAns" type="string">
+            <column name="Sec_Ans" length="50" not-null="true" />
+        </property>
+        <property name="phNumber" type="java.lang.Long">
+            <column name="Ph_Number" />
+        </property>
+        <property name="EMail" type="string">
+            <column name="`E-Mail`" length="40" not-null="true" />
+        </property>
+        <property name="fax" type="java.lang.Integer">
+            <column name="Fax" />
+        </property>
+        <property name="salary" type="big_decimal">
+            <column name="Salary" precision="10" />
+        </property>
+        <property name="dateOfJoining" type="date">
+            <column name="Date_of_Joining" length="10" not-null="true" />
+        </property>
+        <property name="validity" type="java.lang.Integer">
+            <column name="Validity" />
+        </property>
+    </class>
+</hibernate-mapping>

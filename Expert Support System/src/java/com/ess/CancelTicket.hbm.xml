@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 30, 2014 10:31:50 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.ess.CancelTicket" table="cancel_ticket" catalog="expert_support_system">
+        <id name="ticketId" type="int">
+            <column name="Ticket_Id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="clientDetails" class="com.ess.ClientDetails" fetch="select">
+            <column name="Client_Id" not-null="true" />
+        </many-to-one>
+        <property name="issue" type="string">
+            <column name="Issue" length="30" not-null="true" />
+        </property>
+        <property name="priority" type="string">
+            <column name="Priority" length="30" not-null="true" />
+        </property>
+        <property name="solverName" type="string">
+            <column name="Solver_Name" length="30" not-null="true" />
+        </property>
+        <property name="category" type="string">
+            <column name="Category" length="30" not-null="true" />
+        </property>
+        <property name="reason" type="string">
+            <column name="Reason" length="50" not-null="true" />
+        </property>
+        <property name="cancelationDate" type="date">
+            <column name="Cancelation_Date" length="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

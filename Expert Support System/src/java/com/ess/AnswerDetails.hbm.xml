@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 30, 2014 10:31:50 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.ess.AnswerDetails" table="answer_details" catalog="expert_support_system">
+        <id name="ticketId" type="int">
+            <column name="Ticket_Id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="loginDetails" class="com.ess.LoginDetails" fetch="select">
+            <column name="Login_Id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="clientDetails" class="com.ess.ClientDetails" fetch="select">
+            <column name="Client_Id" not-null="true" />
+        </many-to-one>
+        <property name="category" type="string">
+            <column name="Category" length="30" not-null="true" />
+        </property>
+        <property name="solverName" type="string">
+            <column name="`Solver Name`" length="30" not-null="true" />
+        </property>
+        <property name="issue" type="string">
+            <column name="Issue" length="30" not-null="true" />
+        </property>
+        <property name="solution" type="string">
+            <column name="Solution" length="200" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

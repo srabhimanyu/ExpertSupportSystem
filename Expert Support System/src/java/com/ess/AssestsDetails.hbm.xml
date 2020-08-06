@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 30, 2014 10:31:50 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.ess.AssestsDetails" table="assests_details" catalog="expert_support_system">
+        <id name="assetId" type="java.lang.Integer">
+            <column name="Asset_Id" />
+            <generator class="identity" />
+        </id>
+        <property name="assestName" type="string">
+            <column name="Assest_Name" length="30" not-null="true" />
+        </property>
+        <property name="quantity" type="java.lang.Integer">
+            <column name="Quantity" />
+        </property>
+        <property name="cost" type="big_decimal">
+            <column name="Cost" precision="10" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 30, 2014 10:31:50 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.ess.AdminDetails" table="admin_details" catalog="expert_support_system">
+        <id name="loginId" type="java.lang.Integer">
+            <column name="Login_Id" />
+            <generator class="identity" />
+        </id>
+        <property name="passwd" type="string">
+            <column name="Passwd" length="30" not-null="true" />
+        </property>
+        <property name="grp" type="string">
+            <column name="Grp" length="30" not-null="true" />
+        </property>
+        <property name="workingHours" type="java.lang.Integer">
+            <column name="Working_Hours" />
+        </property>
+        <property name="noOfTickets" type="java.lang.Integer">
+            <column name="No_of_tickets" />
+        </property>
+        <property name="solverName" type="string">
+            <column name="Solver_Name" length="30" not-null="true" />
+        </property>
+        <property name="category" type="string">
+            <column name="Category" length="30" not-null="true" />
+        </property>
+        <property name="issue" type="string">
+            <column name="Issue" length="30" not-null="true" />
+        </property>
+        <property name="clientName" type="string">
+            <column name="Client_Name" length="30" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

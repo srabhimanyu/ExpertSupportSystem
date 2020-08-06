@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 30, 2014 10:31:50 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.ess.ClientDetails" table="client_details" catalog="expert_support_system">
+        <id name="clientId" type="java.lang.Integer">
+            <column name="Client_Id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="loginDetails" class="com.ess.LoginDetails" fetch="select">
+            <column name="Login_Id" not-null="true" />
+        </many-to-one>
+        <property name="firstName" type="string">
+            <column name="First_Name" length="30" not-null="true" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="Last_Name" length="30" not-null="true" />
+        </property>
+        <property name="passwd" type="string">
+            <column name="Passwd" length="30" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="Address" length="50" not-null="true" />
+        </property>
+        <property name="city" type="string">
+            <column name="City" length="20" not-null="true" />
+        </property>
+        <property name="state" type="string">
+            <column name="State" length="20" not-null="true" />
+        </property>
+        <property name="country" type="string">
+            <column name="Country" length="30" not-null="true" />
+        </property>
+        <property name="secQues" type="string">
+            <column name="Sec_Ques" length="50" not-null="true" />
+        </property>
+        <property name="secAns" type="string">
+            <column name="Sec_Ans" length="50" not-null="true" />
+        </property>
+        <property name="phNumber" type="java.lang.Long">
+            <column name="Ph_Number" />
+        </property>
+        <property name="EMail" type="string">
+            <column name="`E-Mail`" length="40" />
+        </property>
+        <property name="fax" type="java.lang.Integer">
+            <column name="Fax" />
+        </property>
+        <property name="fee" type="big_decimal">
+            <column name="Fee" precision="10" />
+        </property>
+        <property name="date" type="date">
+            <column name="Date" length="10" not-null="true" />
+        </property>
+        <property name="validity" type="java.lang.Integer">
+            <column name="Validity" />
+        </property>
+        <set name="cancelTickets" table="cancel_ticket" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Client_Id" not-null="true" />
+            </key>
+            <one-to-many class="com.ess.CancelTicket" />
+        </set>
+        <set name="answerDetailses" table="answer_details" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Client_Id" not-null="true" />
+            </key>
+            <one-to-many class="com.ess.AnswerDetails" />
+        </set>
+        <set name="solveTickets" table="solve_ticket" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Client_Id" not-null="true" />
+            </key>
+            <one-to-many class="com.ess.SolveTicket" />
+        </set>
+    </class>
+</hibernate-mapping>

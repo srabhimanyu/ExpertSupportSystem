@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 30, 2014 10:31:50 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.ess.TicketDetails" table="ticket_details" catalog="expert_support_system">
+        <id name="ticketId" type="java.lang.Integer">
+            <column name="Ticket_Id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="loginDetails" class="com.ess.LoginDetails" fetch="select">
+            <column name="Login_Id" not-null="true" />
+        </many-to-one>
+        <property name="category" type="string">
+            <column name="Category" length="30" not-null="true" />
+        </property>
+        <property name="priority" type="string">
+            <column name="Priority" length="30" not-null="true" />
+        </property>
+        <property name="issue" type="string">
+            <column name="Issue" length="30" not-null="true" />
+        </property>
+        <property name="status" type="string">
+            <column name="Status" length="30" not-null="true" />
+        </property>
+        <set name="sessionDetailses" table="session_details" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Ticket_Id" not-null="true" />
+            </key>
+            <one-to-many class="com.ess.SessionDetails" />
+        </set>
+    </class>
+</hibernate-mapping>

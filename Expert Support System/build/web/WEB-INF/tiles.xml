@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ 
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+
+    <definition name="/welcome" template="/Tiles-Layout/welcome-layout.jsp">
+        <put-attribute name="header" value="/Tiles-Header/welcome-header.jsp" />
+        <put-attribute name="menu" value="/Tiles-Menu/welcome-menu.jsp" />
+        <put-attribute name="body" value="/Tiles-Body/welcome-body.jsp" />
+        <put-attribute name="footer" value="/Tiles-Footer/welcome-footer.jsp" />
+    </definition> 
+
+<definition name="/welcomeHome" extends="/welcome">
+        <put-attribute name="body" value="/Tiles-Body/welcome-body.jsp" />
+    </definition>
+    
+    <definition name="/logout" extends="/welcome">
+        <put-attribute name="menu" value="/Tiles-Menu/welcome-menu.jsp" />
+        <put-attribute name="body" value="/Tiles-Body/logout.jsp" />
+    </definition>
+   
+   
+    <definition name="/SignUp" extends="/welcome">
+        <put-attribute name="menu" value="/Tiles-Menu/blank.jsp" />
+        <put-attribute name="body" value="/login-SignUp.jsp" />
+    </definition>
+
+       <definition name="/SignUpRepresentative" extends="/welcome">
+        <put-attribute name="menu" value="/Tiles-Menu/blank.jsp" />
+        <put-attribute name="body" value="/Module-representative/representative-signup.jsp" />
+    </definition>   
+
+    <definition name="/repSignUpAction" extends="/SignUpRepresentative">
+        <put-attribute name="menu" value="/Tiles-Menu/welcome-menu.jsp" />
+        <put-attribute name="body" value="/Module-representative/repSignUpSuccessfull.jsp" />
+    </definition>    
+
+       <definition name="/SignUpClient" extends="/welcome">
+        <put-attribute name="menu" value="/Tiles-Menu/blank.jsp" />
+        <put-attribute name="body" value="/Module-client/client-signup.jsp" />
+    </definition>   
+
+    <definition name="/clientSignUpAction" extends="/SignUpClient">
+        <put-attribute name="menu" value="/Tiles-Menu/welcome-menu.jsp" />
+        <put-attribute name="body" value="/Module-representative/repSignUpSuccessfull.jsp" />
+    </definition>    
+          
+    <definition name="/loginmenu" extends="/welcome">
+        <put-attribute name="body" value="/Tiles-Body/welcome-login.jsp" />
+    </definition>
+                
+    <definition name="/LoginActionAdmin" extends="/welcome">
+        <put-attribute name="header" value="/Tiles-Header/header.jsp" />
+        <put-attribute name="menu" value="/Tiles-Menu/admin-menu.jsp" />
+        <put-attribute name="body" value="/Tiles-Body/admin-home.jsp" />
+    </definition>
+
+    <definition name="/updateAdmin" extends="/LoginActionAdmin">
+        <put-attribute name="body" value="/Module-admin/admin-authentication.jsp" />
+    </definition>
+
+    <definition name="/LoginToNotifyViaEmail" extends="/LoginActionRep">
+        <put-attribute name="body" value="/Module-representative/representative-authentication.jsp" />
+    </definition>
+    
+    <definition name="/representativeaccess" extends="/LoginToNotifyViaEmail">
+        <put-attribute name="body" value="/Module-representative/representative-sendEmailForm.jsp" />
+    </definition>
+
+    <definition name="/SuccessEmail" extends="/representativeaccess">
+        <put-attribute name="body" value="/Module-Email/email-success.jsp" />
+    </definition>
+    
+    <definition name="/ErrorEmail" extends="/representativeaccess">
+        <put-attribute name="body" value="/Module-Email/email-error.jsp" />
+    </definition>
+
+
+    <definition name="/updateAdminAccess" extends="/updateAdmin">
+        <put-attribute name="body" value="/Module-admin/admin-profileUpdate.jsp" />
+    </definition>    
+
+    <definition name="/adminSignUp" extends="/LoginActionAdmin">
+        <put-attribute name="body" value="/Module-admin/admin-signup.jsp" />
+    </definition>    
+    
+    <definition name="/adminHome" extends="/LoginActionAdmin">
+        <put-attribute name="body" value="/Tiles-Body/admin-home.jsp" />
+    </definition>    
+    
+    <definition name="/adminSignUpAction" extends="/adminSignUp">
+        <put-attribute name="body" value="/Module-admin/admin-signUpSuccessful.jsp" />
+    </definition>
+        
+    <definition name="/LoginActionRep" extends="/welcome">
+        <put-attribute name="header" value="/Tiles-Header/header.jsp" />
+        <put-attribute name="menu" value="/Tiles-Menu/representative-menu.jsp" />
+        <put-attribute name="body" value="/Tiles-Body/representative-home.jsp" />
+    </definition>
+    
+    <definition name="/representativeHome" extends="/LoginActionRep">
+        <put-attribute name="body" value="/Tiles-Body/representative-home.jsp" />
+    </definition>    
+    
+    <definition name="/viewAllTickets" extends="/LoginActionRep">
+        <put-attribute name="body" value="/Module-ticket/ticket-view.jsp" />
+    </definition>
+
+    <definition name="/answerTickets" extends="/LoginActionRep">
+        <put-attribute name="body" value="/Module-ticket/ticket-find.jsp" />
+    </definition>   
+            
+    <definition name="/findTickets" extends="/answerTickets">
+        <put-attribute name="body" value="/Module-ticket/ticket-findresult.jsp" />
+    </definition>    
+    
+        <definition name="/answerTicketNow" extends="/findTickets">
+        <put-attribute name="body" value="/Module-ticket/ticket-answer.jsp" />
+    </definition>
+
+        <definition name="/ticketAnswered" extends="/answerTicketNow">
+        <put-attribute name="body" value="/Module-ticket/ticket-fixed.jsp" />
+    </definition>
+
+    <definition name="/viewTicketsToCancel" extends="/LoginActionRep">
+        <put-attribute name="body" value="/Module-ticket/ticket-CancelView.jsp" />
+    </definition>
+    
+        <definition name="/CancelDeleteTicket" extends="/viewTicketsToCancel">
+        <put-attribute name="body" value="/Module-ticket/ticket-CancelPage.jsp" />
+    </definition>
+
+    <definition name="/cancelTicketComplete" extends="/CancelDeleteTicket">
+        <put-attribute name="body" value="/Module-ticket/ticket-CancelSuccess.jsp" />
+    </definition>
+
+        <definition name="/viewAnswerBook" extends="/LoginActionRep">
+        <put-attribute name="body" value="/Module-ticket/ticket-AnswerBook.jsp" />
+    </definition>      
+
+            <definition name="/viewSolvedTickets" extends="/LoginActionRep">
+        <put-attribute name="body" value="/Module-ticket/ticket-SolvedView.jsp" />
+    </definition>    
+    
+    
+    <definition name="/LoginActionClient" extends="/welcome">
+        <put-attribute name="header" value="/Tiles-Header/header.jsp" />
+        <put-attribute name="menu" value="/Tiles-Menu/client-menu.jsp" />
+        <put-attribute name="body" value="/Tiles-Body/client-home.jsp" />
+    </definition>
+
+    
+<definition name="/clientHome" extends="/LoginActionClient">
+        <put-attribute name="body" value="/Tiles-Body/client-home.jsp" />
+    </definition>    
+
+<definition name="/FAQuesAccess" extends="/LoginActionClient">
+        <put-attribute name="body" value="/Tiles-Body/FAQs.jsp" />
+    </definition>  
+    
+    <definition name="/mydetails" extends="/LoginActionClient">
+        <put-attribute name="body" value="/Tiles-Body/FAQs.jsp" />
+    </definition>  
+    
+    
+<definition name="/clientDetailsAccess" extends="/LoginActionClient">
+        <put-attribute name="body" value="/Module-client/client-authentication.jsp" />
+    </definition>
+    
+<definition name="/clientDetails" extends="/clientDetailsAccess">
+        <put-attribute name="body" value="/Module-client/client-detailViewOnly.jsp" />
+    </definition>
+
+      <definition name="/updateDetails" extends="/clientDetailsAccess">
+        <put-attribute name="body" value="/Module-client/client-detailUpdate.jsp" />
+    </definition>      
+
+            <definition name="/updateclientdetailsSuccess" extends="/updateDetails">
+        <put-attribute name="body" value="/Module-client/client-detailUpdateSuccessful.jsp" />
+    </definition>       
+      
+      
+      <definition name="/changelpass" extends="/clientDetailsAccess">
+        <put-attribute name="body" value="/Module-client/client-changeLpasswd.jsp" />
+    </definition>
+
+      <definition name="/changeloginpass" extends="/changelpass">
+        <put-attribute name="body" value="/Module-client/client-changeLoginPassSuccessful.jsp" />
+    </definition>    
+    
+    
+      <definition name="/changecpass" extends="/clientDetailsAccess">
+        <put-attribute name="body" value="/Module-client/client-changeCpasswd.jsp" />
+    </definition>                                                  
+    
+      <definition name="/changeclientpass" extends="/changecpass">
+        <put-attribute name="body" value="/Module-client/client-changeClientPassSuccessful.jsp" />
+    </definition>    
+    
+    <definition name="/generateTicketRequest" extends="/checkTnC">
+        <put-attribute name="body" value="/Module-client/client-generateTicketReq.jsp" />
+    </definition>
+    
+    <definition name="/sendGenTicketRequest" extends="/generateTicketRequest">
+        <put-attribute name="body" value="/Module-client/client-generateTicketReqSuccessful.jsp" />
+    </definition>
+    
+        <definition name="/checkTnC" extends="/LoginActionClient">
+        <put-attribute name="body" value="/Tiles-Body/Terms_Conditions.jsp" />
+    </definition>
+    
+        
+</tiles-definitions>
